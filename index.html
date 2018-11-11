@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script>
+        function getGET(query) {
+            var url = window.location.href;
+            var urlConstructor = new URL(url);
+            return urlConstructor.searchParams.get(query);
+        }
+        window.onload = function() {
+            if(getGET('d')){
+                document.getElementById('main').src = getGET('d') + '.swf';
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <embed id='main' src='default.swf' type='application/x-shockwave-flash' width="100%" height="100%">
+</body>
+
+</html>
